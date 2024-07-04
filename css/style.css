@@ -79,6 +79,22 @@ overflow: hidden;
     z-index: 99999;
     padding-bottom: 15px;
 }
+.game{
+  position: relative;
+}
+.game::after{
+  content: "";
+  position:absolute;
+  background-image: url('../bg.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  top:0;
+right:0;
+left:0;
+bottom:96%;
+z-index: -1; 
+}
 .cross-icon {
     margin-left: auto;
 }

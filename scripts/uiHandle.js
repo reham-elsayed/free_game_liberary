@@ -148,7 +148,7 @@ gameCard.setAttribute('id', `game-${this.id}`)
  <small class="btn btn-info p-0">free</small>
  </div>
  <div class="text-center text-set">
-     <small class="card-text">${this.desc.split(" ").slice(0,8).join(" ")}</small>
+     <small class="card-text">${this.desc.split(" ").slice(0,5).join(" ")}</small>
 
  </div>
  </div>
@@ -219,8 +219,14 @@ async function displayInfo(id){
 let gameDetail = new Gamedetail(id);
 let game_info = await gameDetail.getData();
 console.log(game_info);
+if(!game_info){
+   loader.classList.replace("d-none", "d-block")
+}
+else{
+   loader.classList.replace("d-block", "d-none");
+   await handleInfoDisplay(game_info)
 
-await handleInfoDisplay(game_info)
+}
    
 }
 
